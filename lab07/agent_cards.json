@@ -1,0 +1,35 @@
+[
+  {
+    "name": "EventPlanner",
+    "description": "Orchestrates event planning: delegates to VenueAgent and CateringAgent.",
+    "url": "http://localhost:8000/planner",
+    "skills": [
+      {
+        "name": "plan_event",
+        "description": "Plan an event given guest count and budget."
+      }
+    ]
+  },
+  {
+    "name": "VenueAgent",
+    "description": "Finds a suitable venue for a given guest count and budget.",
+    "url": "http://localhost:8001/venue",
+    "skills": [
+      {
+        "name": "find_venue",
+        "description": "Return a venue proposal or refuse."
+      }
+    ]
+  },
+  {
+    "name": "CateringAgent",
+    "description": "Finds a suitable caterer within a remaining budget and venue constraints.",
+    "url": "http://localhost:8002/catering",
+    "skills": [
+      {
+        "name": "find_caterer",
+        "description": "Return a caterer proposal or refuse."
+      }
+    ]
+  }
+]

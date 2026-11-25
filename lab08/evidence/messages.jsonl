@@ -1,0 +1,8 @@
+{"conversation_id": "order-001", "sender": "CustomerAgent", "receiver": "Dispatcher", "performative": "request", "content": "Place order: 2 jollof rice, 1 grilled tilapia"}
+{"conversation_id": "order-001", "sender": "Dispatcher", "receiver": "RestaurantAgent", "performative": "request", "content": "Prepare order for customer, 2 jollof rice + 1 tilapia"}
+{"conversation_id": "order-001", "sender": "RestaurantAgent", "receiver": "Dispatcher", "performative": "accept", "content": "Order accepted, preparing"}
+{"conversation_id": "order-001", "sender": "RestaurantAgent", "receiver": "Dispatcher", "performative": "inform", "content": "Food ready for pickup"}
+{"conversation_id": "order-001", "sender": "Dispatcher", "receiver": "RiderAgent", "performative": "request", "content": "Pick up order from restaurant and deliver to customer"}
+{"conversation_id": "order-001", "sender": "RiderAgent", "receiver": "Dispatcher", "performative": "accept", "content": "Pickup accepted"}
+{"conversation_id": "order-001", "sender": "RiderAgent", "receiver": "CustomerAgent", "performative": "inform", "content": "Order delivered"}
+{"conversation_id": "order-001", "sender": "CustomerAgent", "receiver": "Dispatcher", "performative": "accept", "content": "Thank you, order received"}
