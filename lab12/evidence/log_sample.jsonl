@@ -1,0 +1,5 @@
+{"timestamp": "2026-11-25T10:00:01Z", "chat_id_hash": "a1b2c3d4e5f6", "question": "What are the OPD opening hours?", "tools": ["search_faq"], "latency_ms": 1200, "tokens": 320, "status": "ok"}
+{"timestamp": "2026-11-25T10:01:12Z", "chat_id_hash": "a1b2c3d4e5f6", "question": "What about Sunday?", "tools": ["search_faq"], "latency_ms": 980, "tokens": 280, "status": "ok"}
+{"timestamp": "2026-11-25T10:02:45Z", "chat_id_hash": "b2c3d4e5f6a7", "question": "Is the lipid profile covered by NHIS?", "tools": ["search_faq"], "latency_ms": 1100, "tokens": 310, "status": "ok"}
+{"timestamp": "2026-11-25T10:03:30Z", "chat_id_hash": "c3d4e5f6a7b8", "question": "WiFi password please", "tools": [], "latency_ms": 420, "tokens": 120, "status": "refused"}
+{"timestamp": "2026-11-25T10:04:01Z", "chat_id_hash": "d4e5f6a7b8c9", "question": "When does add/drop end?", "tools": ["get_deadline"], "latency_ms": 900, "tokens": 260, "status": "ok"}
