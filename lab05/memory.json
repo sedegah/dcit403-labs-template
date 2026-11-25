@@ -31,6 +31,10 @@
     {
       "q": "What services does the clinic not provide?",
       "a": "The clinic does not offer **surgery, X‑ray, ultrasound scans, or overnight admission**. Patients who need any of these services are referred to the district hospital with a referral letter. [services.md]"
+    },
+    {
+      "q": "What are the OPD opening hours?",
+      "a": "The Outpatient Department (OPD) is open:\n\n- **Monday to Friday:** 7:30 am – 6:00 pm  \n- **Saturday:** 8:00 am – 2:00 pm  \n- **Sunday and public holidays:** closed  \n\n[opening_hours.md]"
     }
   ],
   "facts": []
