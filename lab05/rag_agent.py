@@ -10,10 +10,32 @@ from litellm import completion
 
 import chromadb
 
-from embeddings import HashingEmbeddingFunction
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
+import math as _math
+
+def _tok(text):
+    return re.findall(r"[a-z0-9]+", text.lower())
+
+def _embed_one(text):
+    vec = [0.0] * 512
+    for t in _tok(text):
+        i = int(__import__("hashlib").md5(t.encode()).hexdigest(), 16) % 512
+        vec[i] += 1.0
+    n = _math.sqrt(sum(v * v for v in vec))
+    return [v / n for v in vec] if n > 0 else vec
+
+class HashingEmbeddingFunction:
+    def __call__(self, input):
+        return [_embed_one(t) for t in input]
+    def embed_query(self, input):
+        return self(input if isinstance(input, list) else [input])
+    def embed_documents(self, input):
+        return self(input)
+    def name(self):
+        return "hashing-512"
 
 HERE = Path(__file__).resolve().parent
 load_dotenv(HERE.parent / ".env")
