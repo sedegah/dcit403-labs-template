@@ -1,0 +1,81 @@
+{
+  "name": "NetLink Ghana Complaint Workflow",
+  "nodes": [
+    {
+      "parameters": { "httpMethod": "POST", "path": "complaint", "responseMode": "responseNode" },
+      "id": "webhook",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [200, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const complaint = $json.body.complaint || '';\nreturn [{ json: { complaint } }];"
+      },
+      "id": "extract",
+      "name": "Extract Complaint",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [420, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const c = $json.complaint.toLowerCase();\nlet category = 'Account';\nif (c.includes('charge') || c.includes('bill') || c.includes('refund')) category = 'Billing';\nelse if (c.includes('internet') || c.includes('network') || c.includes('slow') || c.includes('down')) category = 'Network';\nreturn [{ json: { ...$json, category } }];"
+      },
+      "id": "classify",
+      "name": "Classify",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [640, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": false, "leftValue": "", "typeValidation": "strict" },
+          "conditions": [
+            { "id": "billing", "leftValue": "={{ $json.category }}", "rightValue": "Billing", "operator": { "type": "string", "operation": "equals" } },
+            { "id": "network", "leftValue": "={{ $json.category }}", "rightValue": "Network", "operator": { "type": "string", "operation": "equals" } }
+          ],
+          "combinator": "or"
+        }
+      },
+      "id": "route",
+      "name": "Route by Category",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [860, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const skill = `Acknowledge, restate, explain, promise timeline, close politely.`;\nconst reply = `Dear valued customer,\\n\\nThank you for contacting NetLink Ghana. We are reviewing your ${$json.category.toLowerCase()} concern and will respond within two working days.\\n\\nKind regards,\\nNetLink Ghana Customer Care`;\nreturn [{ json: { ...$json, draft: reply } }];"
+      },
+      "id": "draft",
+      "name": "Draft Reply",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1080, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { category: $json.category, reply: $json.draft } }}"
+      },
+      "id": "respond",
+      "name": "Respond",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1300, 300]
+    }
+  ],
+  "connections": {
+    "Webhook": { "main": [[{ "node": "Extract Complaint", "type": "main", "index": 0 }]] },
+    "Extract Complaint": { "main": [[{ "node": "Classify", "type": "main", "index": 0 }]] },
+    "Classify": { "main": [[{ "node": "Route by Category", "type": "main", "index": 0 }]] },
+    "Route by Category": { "main": [[{ "node": "Draft Reply", "type": "main", "index": 0 }]] },
+    "Draft Reply": { "main": [[{ "node": "Respond", "type": "main", "index": 0 }]] }
+  },
+  "active": false,
+  "settings": { "executionOrder": "v1" },
+  "versionId": "1"
+}

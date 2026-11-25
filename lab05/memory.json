@@ -1,0 +1,37 @@
+{
+  "history": [
+    {
+      "q": "What are the opening hours of the OPD?",
+      "a": "The OPD is open:\n\n- **Monday to Friday:** 7:30 am – 6:00 pm  \n- **Saturday:** 8:00 am – 2:00 pm  \n- **Sunday and public holidays:** closed  \n\n[opening_hours.md]"
+    },
+    {
+      "q": "What about Sunday?",
+      "a": "On Sundays the clinic’s main services are closed, except for the pharmacy:\n\n- **Outpatient Department (OPD)** – closed.  \n- **Laboratory** – closed.  \n- **Pharmacy** – open 10:00 am to 2:00 pm, but only for prescriptions from this clinic.  \n\nFor any emergencies, go to the nearest hospital emergency unit or call the National Ambulance Service on 112.  \n[opening_hours.md]"
+    },
+    {
+      "q": "Do I need an appointment for the laboratory?",
+      "a": "No, you do not need an appointment to use the laboratory.  \n[appointments_and_visits.md]"
+    },
+    {
+      "q": "Is the lipid profile covered by NHIS?",
+      "a": "No – the lipid profile test is not covered by NHIS. It is listed as an item not covered in the NHIS coverage list. [nhis.md]"
+    },
+    {
+      "q": "How do I prepare for a fasting blood sugar test?",
+      "a": "For a fasting blood sugar test, you should:\n\n- Fast for 8–12 hours before the test (no food or drinks except water).  \n- Arrive at the laboratory between 7:00 am and 10:00 am.  \n- Take your usual medications unless your doctor has advised otherwise, and bring them with you.  \n\n[lab_test_preparation.md]"
+    },
+    {
+      "q": "Can I pay by card?",
+      "a": "No – the clinic accepts only cash and mobile‑money payments (MTN MoMo, Telecel Cash, AT Money). Card payments are not accepted. [nhis.md]"
+    },
+    {
+      "q": "Where should I go in an emergency?",
+      "a": "For an emergency, you should go straight to the nearest hospital emergency unit or call the National Ambulance Service at 112. The clinic is not an emergency centre. [appointments_and_visits.md]"
+    },
+    {
+      "q": "What services does the clinic not provide?",
+      "a": "The clinic does not offer **surgery, X‑ray, ultrasound scans, or overnight admission**. Patients who need any of these services are referred to the district hospital with a referral letter. [services.md]"
+    }
+  ],
+  "facts": []
+}
