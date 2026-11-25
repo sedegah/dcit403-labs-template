@@ -1,0 +1,10 @@
+Question: Say good morning to me in Twi.
+Model: groq/qwen/qwen3.8-27b
+Run: 2026-11-25T14:55:53
+
+--- Step 1 ---
+Thought: This is a common greeting translation that I know, so I can finish directly.
+Action: finish
+Action Input: Akwaaba! (Note: "Akwaaba" is actually "Welcome." The common "Good morning" greeting in Twi is "Maakye" or "Maakye, me dɔ wo.")
+
+Final answer: Akwaaba! (Note: "Akwaaba" is actually "Welcome." The common "Good morning" greeting in Twi is "Maakye" or "Maakye, me dɔ wo.")
