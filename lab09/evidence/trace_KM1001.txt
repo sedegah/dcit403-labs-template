@@ -1,0 +1,7 @@
+Order: KM1001 (Customer A)
+Item: Kente stole (small)
+Total: GHS 205.00
+Order date: 2026-11-22
+Eligible: True (within window (3 days))
+Approved: False
+Outcome: rejected: approver rejected

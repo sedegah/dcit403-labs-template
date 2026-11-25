@@ -1,0 +1,8 @@
+Order: KM1008 (Customer H)
+Item: Kente bow tie
+Total: GHS 105.00
+Order date: 2026-11-24
+Eligible: True (within window (1 days))
+Approved: True
+Outcome: refunded
+Refund ID: RF-KM1008

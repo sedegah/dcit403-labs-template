@@ -1,0 +1,8 @@
+Order: KM1006 (Customer F)
+Item: Beaded bracelet set
+Total: GHS 90.00
+Order date: 2026-11-18
+Eligible: True (within window (7 days))
+Approved: True
+Outcome: refunded
+Refund ID: RF-KM1006

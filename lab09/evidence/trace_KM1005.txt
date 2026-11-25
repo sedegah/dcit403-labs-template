@@ -1,0 +1,8 @@
+Order: KM1005 (Customer E)
+Item: Kente cloth (12 yards)
+Total: GHS 1850.00
+Order date: 2026-11-23
+Eligible: True (within window (2 days))
+Approved: True
+Outcome: refunded
+Refund ID: RF-KM1005

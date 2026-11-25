@@ -1,0 +1,7 @@
+Order: KM1004 (Customer D)
+Item: Kente bag
+Total: GHS 285.00
+Order date: 2026-11-05
+Eligible: False (outside 14-day window (20 days))
+Approved: True
+Outcome: rejected: outside 14-day window (20 days)

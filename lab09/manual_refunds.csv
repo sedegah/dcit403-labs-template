@@ -1,0 +1,4 @@
+refund_id,order_id,customer,amount_ghs,date
+RF-KM1008,KM1008,Customer H,105.00,2026-11-25
+RF-KM1005,KM1005,Customer E,1850.00,2026-11-25
+RF-KM1006,KM1006,Customer F,90.00,2026-11-25
