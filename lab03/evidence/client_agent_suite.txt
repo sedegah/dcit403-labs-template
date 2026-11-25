@@ -1,0 +1,83 @@
+# client_agent.py on groq/openai/gpt-oss-20b
+# server: python C:\Users\sedki\Desktop\dcit403-labs-template\lab03\server.py
+# run: 2026-11-25T14:32:07
+
+DISCOVERED TOOLS: check_stock, search_items, list_expiring, record_sale
+========================================================================
+QUESTION 1: Do we have amoxicillin 500mg?
+
+[step 1] assistant: None
+[step 1] tool_call: check_stock({"item":"amoxicillin","strength":"500mg"})
+          -> [{"item": "Amoxicillin", "strength": "500mg", "form": "capsules (pack of 21)", "quantity": 40, "unit_price_ghs": 35.0, "expiry_date": "2027-12-17", "days_left": 387}] (7 ms)
+
+[step 2] assistant: 'Yes – we have **Amoxicillin 500\u202fmg** in capsules (pack of 21).  \n- **Quantity on hand:** 40 packs  \n- **Unit price:** GHS\u202f35.00 per pack  \n- **Expiry date:** 17\u202fDec\u202f2027  \n- **Days left until expiry:** 387 days'
+FINAL: Yes – we have **Amoxicillin 500 mg** in capsules (pack of 21).  
+- **Quantity on hand:** 40 packs  
+- **Unit price:** GHS 35.00 per pack  
+- **Expiry date:** 17 Dec 2027  
+- **Days left until expiry:** 387 days
+========================================================================
+QUESTION 2: Which items expire within 60 days?
+
+[step 1] assistant: None
+[step 1] tool_call: list_expiring({"days":60})
+          -> [{"item": "Hydrocortisone", "strength": "1%", "form": "cream (15g)", "quantity": 22, "unit_price_ghs": 14.0, "expiry_date": "2026-11-17", "days_left": -8}, {"item": "Ciprofloxacin", "strength": "500mg", "form": "tablets (pack of 10)", "quantity": 25, "unit_price_ghs": 24.0, "expiry_date": "2026-11-2 (5 ms)
+
+[step 2] assistant: 'Here are the items that will expire within the next 60 days (including those already expired):\n\n| Item | Strength | Form | Quantity | Unit Price (GHS) | Expiry Date | Days Left |\n|------|----------|------|----------|------------------|-------------|-----------|\n| Hydrocortisone | 1\u202f% | cream (15\u202fg) | 22 | 14.0 | 2026‑11‑17 | **‑8** (already expired) |\n| Ciprofloxacin | 500\u202fmg | tablets (pack of 10) | 25 | 24.0 | 2026‑11‑27 | 2 |\n| Paracetamol | 120\u202fmg/5\u202fml | syrup (100\u202fml) | 30 | 15.0 | 2026‑12‑07 | 12 |\n| Oral Rehydration Salts | 20.5\u202fg | sachet | 200 | 2.5 | 2026‑12‑12 | 17 |\n| Amoxicillin | 250\u202fmg | capsules (pack of 21) | 12 | 22.5 | 2026‑12‑27 | 32 |\n| Artemether‑Lumefantrine | 80/480\u202fmg | tablets (pack of 6) | 8 | 32.0 | 2027‑01‑06 | 42 |\n| Cetirizine | 10\u202fmg | tablets (pack of 10) | 80 | 7.5 | 2027‑01‑10 | 46 |\n\n*The “Days Left” column shows how many days remain until the expiry date; a negative value indicates the batch has already expired and should not be sold.*'
+FINAL: Here are the items that will expire within the next 60 days (including those already expired):
+
+| Item | Strength | Form | Quantity | Unit Price (GHS) | Expiry Date | Days Left |
+|------|----------|------|----------|------------------|-------------|-----------|
+| Hydrocortisone | 1 % | cream (15 g) | 22 | 14.0 | 2026‑11‑17 | **‑8** (already expired) |
+| Ciprofloxacin | 500 mg | tablets (pack of 10) | 25 | 24.0 | 2026‑11‑27 | 2 |
+| Paracetamol | 120 mg/5 ml | syrup (100 ml) | 30 | 15.0 | 2026‑12‑07 | 12 |
+| Oral Rehydration Salts | 20.5 g | sachet | 200 | 2.5 | 2026‑12‑12 | 17 |
+| Amoxicillin | 250 mg | capsules (pack of 21) | 12 | 22.5 | 2026‑12‑27 | 32 |
+| Artemether‑Lumefantrine | 80/480 mg | tablets (pack of 6) | 8 | 32.0 | 2027‑01‑06 | 42 |
+| Cetirizine | 10 mg | tablets (pack of 10) | 80 | 7.5 | 2027‑01‑10 | 46 |
+
+*The “Days Left” column shows how many days remain until the expiry date; a negative value indicates the batch has already expired and should not be sold.*
+========================================================================
+QUESTION 3: Do you have any paracetamol syrup, and what does it cost?
+
+[step 1] assistant: None
+[step 1] tool_call: search_items({"query":"paracetamol syrup"})
+          -> [{"item": "Paracetamol", "strength": "120mg/5ml", "form": "syrup (100ml)", "quantity": 30, "unit_price_ghs": 15.0, "expiry_date": "2026-12-07", "days_left": 12}] (5 ms)
+
+[step 2] assistant: 'Yes – we have **Paracetamol syrup (120\u202fmg/5\u202fml, 100\u202fml bottle)** in stock.  \n- Quantity available: **30 bottles**  \n- Unit price: **GHS\u202f15.00** each.'
+FINAL: Yes – we have **Paracetamol syrup (120 mg/5 ml, 100 ml bottle)** in stock.  
+- Quantity available: **30 bottles**  
+- Unit price: **GHS 15.00** each.
+========================================================================
+QUESTION 4: How much paracetamol do we have?
+
+[step 1] assistant: None
+[step 1] tool_call: check_stock({"item":"paracetamol"})
+          -> [{"item": "Paracetamol", "strength": "500mg", "form": "tablets (pack of 24)", "quantity": 150, "unit_price_ghs": 8.0, "expiry_date": "2028-07-04", "days_left": 587}, {"item": "Paracetamol", "strength": "120mg/5ml", "form": "syrup (100ml)", "quantity": 30, "unit_price_ghs": 15.0, "expiry_date": "2026 (6 ms)
+
+[step 2] assistant: 'We have two paracetamol products in stock:\n\n| Strength | Form | Quantity |\n|----------|------|----------|\n| 500\u202fmg | Tablets (pack of 24) | 150 packs |\n| 120\u202fmg/5\u202fml | Syrup (100\u202fml) | 30 bottles |'
+FINAL: We have two paracetamol products in stock:
+
+| Strength | Form | Quantity |
+|----------|------|----------|
+| 500 mg | Tablets (pack of 24) | 150 packs |
+| 120 mg/5 ml | Syrup (100 ml) | 30 bottles |
+========================================================================
+QUESTION 5: Record a sale of 3 packs of amoxicillin 500mg.
+
+[step 1] assistant: None
+[step 1] tool_call: record_sale({"item":"amoxicillin","qty":3,"strength":"500mg"})
+          -> { "ok": true, "message": "Sold 3 x Amoxicillin 500mg for GHS 105.00. Stock left: 37.", "item": "Amoxicillin", "strength": "500mg", "form": "capsules (pack of 21)", "sold": 3, "unit_price_ghs": 35.0, "total_ghs": 105.0, "stock_left": 37 } (4 ms)
+
+[step 2] assistant: '✅ Sale recorded: 3 packs of **Amoxicillin 500\u202fmg** (capsules, pack of 21) sold for **GHS\u202f105.00**.  \nStock remaining: **37** packs.'
+FINAL: ✅ Sale recorded: 3 packs of **Amoxicillin 500 mg** (capsules, pack of 21) sold for **GHS 105.00**.  
+Stock remaining: **37** packs.
+========================================================================
+QUESTION 6: Sell 500 packs of paracetamol 500mg to a customer.
+
+[step 1] assistant: None
+[step 1] tool_call: record_sale({"item":"paracetamol","qty":500,"strength":"500mg"})
+          -> { "ok": false, "message": "Sale refused: only 150 packs of Paracetamol 500mg in stock; cannot sell 500." } (9 ms)
+
+[step 2] assistant: 'Sale refused: only 150 packs of Paracetamol 500mg in stock; cannot sell 500.'
+FINAL: Sale refused: only 150 packs of Paracetamol 500mg in stock; cannot sell 500.

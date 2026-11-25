@@ -1,0 +1,23 @@
+# native function calling on groq/openai/gpt-oss-20b
+# tools: ['check_stock']
+
+========================================================================
+QUESTION: Do we have amoxicillin 500mg?
+
+FINAL ANSWER: Yes, we have **Amoxicillin 500 mg** in stock.  
+- **Form:** Capsules (pack of 21)  
+- **Quantity available:** 37 packs  
+- **Unit price:** GHS 35.00 per pack  
+- **Expiry date:** 17 December 2027 (387 days left)
+
+========================================================================
+QUESTION: What do 2 packs of paracetamol 500mg cost?
+
+FINAL ANSWER: The unit price for a pack of Paracetamol 500 mg (24 tablets) is **GHS 8.00**.  
+So, **2 packs would cost GHS 16.00**.
+
+========================================================================
+QUESTION: How many amoxicillin 250mg packs are left and when do they expire?
+
+FINAL ANSWER: There are **12 packs** of amoxicillin 250 mg left in stock.  
+They are set to expire on **27 December 2026** (about **32 days** from today).
